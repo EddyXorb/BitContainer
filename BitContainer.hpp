@@ -1,7 +1,6 @@
-//CRoehl 2019
+//C. Röhl - EddyXorb 2019
 
 #pragma once
-#include <bitset>
 #include <vector>
 #include <array>
 
@@ -19,7 +18,7 @@ template<class BitContainerValueT>
 class BitContainer;
 
 //Derived classes should implement the same constructor and move it into protected or private.
-//Furthermore implement meaningful functions like "static constexpr auto NAME()-> Derived {return Derived(position);}" in derived class.
+//Furthermore implement meaningful functions like "static constexpr auto NAME()-> Derived {return createValue(position); }" in derived class.
 template<std::size_t N, class Derived>
 class BitContainerValue
 {
