@@ -30,6 +30,8 @@ public:
 
 	constexpr friend bool operator==(const Derived& l, const Derived& r) { return l.value == r.value; }
 	constexpr friend bool operator!=(const Derived& l, const Derived& r) { return !(l == r); }
+	constexpr friend bool operator<(const Derived& l, const Derived& r) { return l.value < r.value; }
+
 protected:
 	using underlying_type = std::conditional_t< (N < 17), unsigned short, std::conditional_t<(N < 33), unsigned int, unsigned long long>>;
 	using Base = BitContainerValue<N, Derived>;
@@ -69,6 +71,7 @@ public:
 
 	constexpr bool operator==(BitContainer r) { return this->value == r.value; }
 	constexpr bool operator!=(BitContainer r) { return this->value != r.value; }
+	constexpr bool operator<(BitContainer r) { return this->value < r.value; }
 
 	class const_iterator
 	{
