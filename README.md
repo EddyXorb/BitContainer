@@ -1,6 +1,8 @@
-# BitContainer
+# BitContainer 
 ## Save bool values in memory-optimal, constexpr and expressive way
-
+### Get started
+Just copy the BitContainer.hpp into your project, it is header-only and works out of the box. You will at least need a C++17 compiler. With little work you can replace the variadic *is_same* at the top by a non-C++17-Version and it will work also with C++14. 
+### Details
 A BitContainer is basically a Bit-Field (like std::bitset) with some abstraction to gain the usual "container-feeling" of the standard containers.
 The main difference consists of how we access the bits. We don't do it directly, but use alias constexpr functions. Example:
 ```cpp
